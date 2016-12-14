@@ -14,25 +14,25 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private AlertDialog dialog;
     private AlertDialog.Builder builder;
-    private TextView tView;
+    private TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tView= (TextView) this.findViewById(R.id.textView1);
-        Button button1= (Button) findViewById(R.id.button1);
-        Button button2= (Button) findViewById(R.id.button2);
-        Button button3= (Button) findViewById(R.id.button3);
-        Button button4= (Button) findViewById(R.id.button4);
-        Button button5= (Button) findViewById(R.id.button5);
-        Button button6= (Button) findViewById(R.id.button6);
-        Button button7= (Button) findViewById(R.id.button7);
+        tv1= (TextView) this.findViewById(R.id.textView);
+        Button btn1= (Button) findViewById(R.id.button);
+        Button btn2= (Button) findViewById(R.id.button2);
+        Button btn3= (Button) findViewById(R.id.button3);
+        Button btn4= (Button) findViewById(R.id.button4);
+        Button btn5= (Button) findViewById(R.id.button5);
+        Button btn6= (Button) findViewById(R.id.button6);
+        Button btn7= (Button) findViewById(R.id.button7);
         View.OnClickListener listener=new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
-                    case R.id.button1:
+                    case R.id.button:
                         dialog1();
                         break;
                     case R.id.button2:
@@ -58,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
-        button1.setOnClickListener(listener);
-        button2.setOnClickListener(listener);
-        button3.setOnClickListener(listener);
-        button4.setOnClickListener(listener);
-        button5.setOnClickListener(listener);
-        button6.setOnClickListener(listener);
-        button7.setOnClickListener(listener);
+        btn1.setOnClickListener(listener);
+        btn2.setOnClickListener(listener);
+        btn3.setOnClickListener(listener);
+        btn4.setOnClickListener(listener);
+        btn5.setOnClickListener(listener);
+        btn6.setOnClickListener(listener);
+        btn7.setOnClickListener(listener);
     }
     public void dialog1(){
         dialog=new AlertDialog.Builder(this).create();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         str="平时一般";
                         break;
                 }
-                tView.setText(str);
+                tv1.setText(str);
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,"不忙",listenter2);
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         DialogInterface.OnClickListener listenter3=new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                tView.setText("输入的是："+tedit.getText().toString());
+                tv1.setText("输入的是："+tedit.getText().toString());
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定",listenter3);
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                         str=str+"\n"+item[i];
                     }
                 }
-                tView.setText(str);
+                tv1.setText(str);
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定",listenter4);
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                         str = str + "\n" + item[i];
                     }
                 }
-                tView.setText(str);
+                tv1.setText(str);
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定",listenter5);
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String str="你选择了："+item[which];
-                tView.setText(str);
+                tv1.setText(str);
             }
         };
         builder=new AlertDialog.Builder(this);
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
         DialogInterface.OnClickListener listenter7= new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                tView.setText("输入的是："+tedit.getText().toString());
+                tv1.setText("输入的是："+tedit.getText().toString());
             }
         };
         dialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定",listenter7);
